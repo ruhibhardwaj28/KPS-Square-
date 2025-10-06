@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional CA Firm Design System - Corporate & Elegant */
+
+@layer base {
+  :root {
+    /* Professional Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    /* Neutral Gray Primary */
+    --primary: 0 0% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 0 0% 25%;
+
+    /* Professional Gray Secondary */
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 220 13% 18%;
+    --secondary-dark: 220 13% 69%;
+
+    /* Elegant Muted Tones */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    /* Trust-building Accent */
+    --accent: 213 94% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 0 0% 40%;
+
+    --radius: 0.75rem;
+
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 13% 96%), hsl(220 13% 91%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.95), hsl(var(--primary-dark) / 0.9));
+
+    /* Professional Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 13% 18% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -1px hsl(220 13% 18% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -2px hsl(220 13% 18% / 0.05);
+    --shadow-corporate: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+
+    /* Professional Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Professional Spacing */
+    --section-padding: 5rem;
+    --content-width: 1200px;
+
+    /* Animation Timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 13% 9%;
+    --foreground: 220 14% 96%;
+
+    --card: 220 13% 12%;
+    --card-foreground: 220 14% 96%;
+
+    --popover: 220 13% 12%;
+    --popover-foreground: 220 14% 96%;
+
+    --primary: 0 0% 70%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 220 14% 96%;
+
+    --muted: 220 13% 16%;
+    --muted-foreground: 220 9% 64%;
+
+    --accent: 213 94% 68%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 16%;
+    --input: 220 13% 16%;
+    --ring: 217 91% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Professional Button Variants */
+  .btn-corporate {
+    @apply bg-gradient-to-r from-primary to-primary-dark text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-corporate transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-outline-corporate {
+    @apply border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300;
+  }
+
+  .btn-secondary-corporate {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary-dark font-semibold px-6 py-2.5 rounded-lg transition-all duration-300;
+  }
+
+  /* Professional Card Styles */
+  .card-corporate {
+    @apply bg-card border border-border rounded-xl shadow-lg hover:shadow-corporate transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .card-service {
+    @apply bg-card border border-border rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:border-primary/20;
+  }
+
+  /* Professional Section Styles */
+  .section-padding {
+    @apply py-20 px-6;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Professional Typography */
+  .heading-hero {
+    @apply text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent leading-tight;
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
+  }
+
+  .text-corporate {
+    @apply text-muted-foreground leading-relaxed;
+  }
+
+  /* Professional Navigation */
+  .nav-corporate {
+    @apply fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border;
+  }
+
+  /* Professional Footer */
+  .footer-corporate {
+    @apply bg-gradient-to-r from-primary to-primary-dark text-primary-foreground;
+  }
+}
