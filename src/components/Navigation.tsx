@@ -34,7 +34,7 @@ const Navigation = () => {
             />
             <div className="flex flex-col">
               <span className="font-bold text-lg text-foreground">
-                KPS Square CONSULTING SERVICES
+                KPS Square Consulting Services
               </span>
               <span className="text-xs text-muted-foreground"></span>
             </div>

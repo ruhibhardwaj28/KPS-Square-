@@ -83,7 +83,7 @@ const About = () => {
               <Card className="card-corporate p-8">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white font-bold text-2xl">CA</span>
+                    <span className="text-white font-bold text-2xl">KPS</span>
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">Pawan Sharma</h3>
                   <p className="text-primary font-semibold mb-4">Founder & CEO</p>

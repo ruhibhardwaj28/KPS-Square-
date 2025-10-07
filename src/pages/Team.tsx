@@ -7,6 +7,7 @@ import pawan from "../assets/pawan1.png"
 import amit from "..//assets/amit1.png"
 import ankit from "..//assets/ankit1.png"
 import harish from "..//assets/harish.png"
+import kusum from "..//assets/kusum.png"
 
 const Team = () => {
   const teamMembers = [
@@ -44,7 +45,7 @@ const Team = () => {
       email: "kpssquare@gmail.com",
       phone: "+91 79063 53294",
       linkedin: "#",
-      image: "👨‍💻"
+      image: kusum
     },
     {
       name: "Ankit Pal",
@@ -276,7 +277,7 @@ const Team = () => {
                       "Our team's collective expertise and dedication to client service 
                       is what sets us apart in the industry."
                     </p>
-                    <p className="text-primary font-semibold text-sm mt-2">- CA Rajesh Sharma, Managing Partner</p>
+                    <p className="text-primary font-semibold text-sm mt-2">- Pawan Sharma </p>
                   </div>
                 </div>
               </Card>
