@@ -108,18 +108,17 @@ const Index = () => {
         <div className="relative z-10 container-width text-center text-white">
           <div className="animate-fade-in">
             <h1 className="heading-hero text-white mb-6">
-              Expert Financial Solutions
+              Your Success, Our Commitment
               <br />
-              <span className="text-accent">For Your Business Success</span>
+              {/* <span className="text-accent">For Your Business Success</span> */}
 
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Professional financial services with integrity, expertise, and personalized attention. 
-              From tax planning to business advisory, we're your trusted financial partners.
+              We are committed to empowering businesses and individuals with expert financial solutions. Together, we unlock opportunities, drive sustainable growth, and build a brighter financial future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild className="btn-corporate text-lg px-8 py-4">
-                <Link to="/contact">
+                <Link to="/contact"> 
                   Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

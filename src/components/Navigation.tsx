@@ -4,10 +4,12 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/logo.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -31,7 +33,9 @@ const Navigation = () => {
               className="w-10 h-10 rounded-lg object-cover"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-lg text-foreground">KPS Square CONSULTING SERVICES</span>
+              <span className="font-bold text-lg text-foreground">
+                KPS Square CONSULTING SERVICES
+              </span>
               <span className="text-xs text-muted-foreground"></span>
             </div>
           </Link>
@@ -44,15 +48,18 @@ const Navigation = () => {
                 to={item.path}
                 className={cn(
                   "font-medium transition-colors duration-200 hover:text-primary",
-                  isActive(item.path) 
-                    ? "text-primary border-b-2 border-primary pb-1" 
+                  isActive(item.path)
+                    ? "text-primary border-b-2 border-primary pb-1"
                     : "text-foreground"
                 )}
               >
                 {item.label}
               </Link>
             ))}
-            <Button className="btn-corporate">
+            <Button
+              className="btn-corporate"
+              onClick={() => navigate("/contact")}
+            >
               Get Consultation
             </Button>
           </div>
@@ -81,14 +88,22 @@ const Navigation = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
                     "font-medium transition-colors duration-200 hover:text-primary px-4 py-2",
-                    isActive(item.path) ? "text-primary bg-primary/10" : "text-foreground"
+                    isActive(item.path)
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground"
                   )}
                 >
                   {item.label}
                 </Link>
               ))}
               <div className="px-4">
-                <Button className="btn-corporate w-full">
+                <Button
+                  className="btn-corporate w-full"
+                  onClick={() => {
+                    navigate("/contact");
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
                   Get Consultation
                 </Button>
               </div>
