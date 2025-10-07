@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
-import heroFallback1 from "@/assets/pawan1.png";
+import heroFallback1 from "@/assets/pbg.png";
 import heroFallback2 from "@/assets/team-hero.jpg";
+import heroFallback3 from "@/assets/teampic1.png";
 
 const Index = () => {
   const services = [
@@ -51,6 +52,7 @@ const Index = () => {
   const heroImages = [
     heroFallback1,
     heroFallback2,
+    heroFallback3,
     "/teampic.png",
     "/teampic.png",
     "/teampic.png",
