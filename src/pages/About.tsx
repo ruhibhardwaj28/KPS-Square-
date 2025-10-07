@@ -166,39 +166,48 @@ const About = () => {
 
       {/* Timeline */}
       <section className="section-padding bg-muted">
-        <div className="container-width">
-          <div className="text-center mb-16">
-            <h2 className="heading-section">Our Journey</h2>
-            <p className="text-corporate text-lg max-w-3xl mx-auto">
-              A timeline of key milestones that have shaped our firm's growth and success.
-            </p>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary transform md:-translate-x-0.5"></div>
-            
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} animate-fade-in`} style={{ animationDelay: `${index * 0.2}s` }}>
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
-                    <Card className="card-corporate p-6">
-                      <div className="text-primary font-bold text-lg mb-2">{milestone.year}</div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">{milestone.event}</h3>
-                      <p className="text-corporate">{milestone.description}</p>
-                    </Card>
-                  </div>
-                  
-                  <div className="absolute left-4 md:left-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center transform md:-translate-x-4">
-                    <div className="w-4 h-4 bg-white rounded-full"></div>
-                  </div>
-                  
-                  <div className="flex-1"></div>
-                </div>
-              ))}
+  <div className="container-width">
+    <div className="text-center mb-16">
+      <h2 className="heading-section">Our Journey</h2>
+      <p className="text-corporate text-lg max-w-3xl mx-auto">
+        A timeline of key milestones that have shaped our firm's growth and success.
+      </p>
+    </div>
+
+    <div className="relative">
+      {/* Vertical Line */}
+      <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary transform -translate-x-1/2 md:left-1/2 md:-translate-x-0.5"></div>
+
+      <div className="space-y-8">
+        {milestones.map((milestone, index) => (
+          <div
+            key={index}
+            className={`relative flex flex-col items-center md:items-stretch md:flex-row ${
+              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+            } animate-fade-in`}
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            <div className={`flex-1 md:flex-1 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'} mb-6 md:mb-0`}>
+              <Card className="card-corporate p-6">
+                <div className="text-primary font-bold text-lg mb-2">{milestone.year}</div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">{milestone.event}</h3>
+                <p className="text-corporate">{milestone.description}</p>
+              </Card>
             </div>
+
+            {/* Timeline Circle */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-primary rounded-full flex items-center justify-center md:left-1/2 md:-translate-x-4">
+              <div className="w-4 h-4 bg-white rounded-full"></div>
+            </div>
+
+            <div className="flex-1"></div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Stats */}
       <section className="section-padding bg-gradient-primary text-white">

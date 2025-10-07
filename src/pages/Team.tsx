@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import pawan from "../assets/pawan1.png"
-import amit from "..//assets/amit.png"
-import ankit from "..//assets/ankit.png"
+import amit from "..//assets/amit1.png"
+import ankit from "..//assets/ankit1.png"
 import harish from "..//assets/harish.png"
 
 const Team = () => {
