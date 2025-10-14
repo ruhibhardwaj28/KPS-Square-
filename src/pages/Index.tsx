@@ -4,9 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
-import heroFallback1 from "@/assets/pbg.png";
+import heroFallback1 from "@/assets/pawan5.png";
 import heroFallback2 from "@/assets/teampic.png";
 import heroFallback3 from "@/assets/teampic1.png";
+import pawan from "../assets/pawan4.png";
+import amit from "..//assets/amit1.png";
+import ankit from "..//assets/ankit1.png";
+import harish from "..//assets/harish.png";
+import kusum from "..//assets/kusum.png";
+import rajni from "..//assets/rajni.png";
 
 const Index = () => {
   const services = [
@@ -240,38 +246,49 @@ const Index = () => {
       </section>
 
       {/* Team Preview Section */}
-      <section id="team" className="section-padding">
-        <div className="container-width">
-          <div className="text-center mb-16">
-            <h2 className="heading-section">Meet Our Team</h2>
-            <p className="text-corporate text-lg max-w-3xl mx-auto">
-              Experienced professionals committed to your success.
-            </p>
+      <section id="team" className="section-padding bg-gray-50 py-20">
+  <div className="max-w-6xl mx-auto px-6">
+    {/* Section Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Experienced professionals committed to your success.
+      </p>
+    </div>
+
+    {/* Team Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {[
+        { name: "Kusum Bhardwaj", role: "Owner - CEO", img: kusum},
+        { name: "Pawan Bhardwaj", role: "Founder & Legal Consultant", img: pawan},
+        { name: "Amit Pal", role: "Cost Analyst & Tax Planner", img: amit },
+        { name: "Ankit Pal", role: "Senior Accountant", img: ankit },
+        { name: "Harish Bhardwaj", role: "Operation & Finace Head", img: harish },
+        { name: "Rajni Bhardwaj", role: "Software Engineer – Java & Full Stack Development", img: rajni },
+      ].map((member, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden text-center p-8"
+        >
+          {/* Image */}
+          <div className="w-40 h-40 mx-auto mb-6 rounded-full border-4 border-primary overflow-hidden">
+            <img
+              src={member.img}
+              alt={member.name}
+              className="w-full h-full object-cover"
+            />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Pawan Sharma", role: "Founder & Principal Consultant" },
-              { name: "Amit Pal", role: "Tax & Compliance" },
-              { name: "Kusum Bhardwaj", role: "Audit & Assurance" },
-               { name: "Ankit Pal", role: "Audit & Assurance" },
-                { name: "Harish Bhardwaj", role: "Audit & Assurance" },
-                 { name: "Rajni Bhardwaj", role: "Software Engineer" },
-            ].map((member, index) => (
-              <Card key={index} className="card-corporate p-6 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="flex items-center space-x-4">
-                  <div className="w-14 h-14 rounded-full bg-muted flex items-center justify-center text-primary text-xl font-bold">
-                    {member.name.split(" ").map(w => w[0]).join("")}
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-foreground">{member.name}</h4>
-                    <p className="text-sm text-muted-foreground">{member.role}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+
+          {/* Text */}
+          <h4 className="text-xl font-semibold text-gray-900">{member.name}</h4>
+          <p className="text-gray-600 text-sm mt-2">{member.role}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
       {/* Contact Preview Section */}
       <section id="contact" className="section-padding bg-muted">

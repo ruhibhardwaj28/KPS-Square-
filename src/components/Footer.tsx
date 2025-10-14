@@ -5,8 +5,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer-corporate">
-      <div className="container-width py-16">
+    <footer className="footer-corporate" >
+      <div className="container-width py-16 px-4 sm:px-6 md:px-8 lg:px-16 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
@@ -72,7 +72,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-white/80 mt-0.5 flex-shrink-0" />
                 <div className="text-white/80 text-sm">
-                  HIG Flats, Chandra Nagar<br />
+                  302 Third Floor Sidhartha Palace, Chandra Nagar<br />
                   Surya Nagar, Ghaziabad<br />
                   Uttar Pradesh 201011, India
                 </div>
@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center ">
           <p className="text-white/80 text-sm">
             © {currentYear} KPS Square Consulting Services. All rights reserved.
           </p>
