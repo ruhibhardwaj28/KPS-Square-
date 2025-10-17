@@ -15,6 +15,9 @@ import kusum from "..//assets/kusum.png";
 import rajni from "..//assets/rajni.png";
 
 const Index = () => {
+   const [fieldErrors, setFieldErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const services = [
     {
       title: "Tax Planning & Compliance",
@@ -49,7 +52,7 @@ const Index = () => {
   ];
 
   const stats = [
-    { number: "15+", label: "Years Experience", icon: Clock },
+    { number: "8+", label: "Years Experience", icon: Clock },
     { number: "500+", label: "Happy Clients", icon: Users },
     { number: "98%", label: "Success Rate", icon: Award },
     { number: "24/7", label: "Support Available", icon: TrendingUp }
@@ -291,29 +294,151 @@ const Index = () => {
 
 
       {/* Contact Preview Section */}
-      <section id="contact" className="section-padding bg-muted">
-        <div className="container-width">
-          <div className="text-center mb-12">
-            <h2 className="heading-section">Get In Touch</h2>
-            <p className="text-corporate text-lg max-w-2xl mx-auto">We'd love to learn about your needs.</p>
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <Card className="card-corporate">
-              <CardContent className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input className="w-full px-4 py-3 rounded-md border border-border bg-background" placeholder="Your Name" />
-                  <input className="w-full px-4 py-3 rounded-md border border-border bg-background" placeholder="Email" />
-                  <input className="w-full px-4 py-3 rounded-md border border-border bg-background md:col-span-2" placeholder="Phone" />
-                  <textarea className="w-full px-4 py-3 rounded-md border border-border bg-background md:col-span-2" rows={4} placeholder="How can we help?" />
-                </div>
-                <div className="mt-6 text-right">
-                  <Button className="btn-corporate">Send Message</Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Contact Preview Section */}
+{/* Contact Preview Section */}
+
+<section id="contact" className="section-padding bg-muted">
+  
+  <div className="container-width">
+    <div className="text-center mb-12">
+      <h2 className="heading-section">Get In Touch</h2>
+      <p className="text-corporate text-lg max-w-2xl mx-auto">We'd love to learn about your needs.</p>
+    </div>
+    
+    <div className="max-w-3xl mx-auto">
+      <Card className="card-corporate">
+        <CardContent className="p-6">
+          
+          <form
+            id="contactForm"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.target;
+              
+              const name = form.name.value.trim();
+              const email = form.email.value.trim();
+              const phone = form.phone.value.trim();
+              const message = form.message.value.trim();
+
+              let valid = true;
+              const errors = {};
+
+              // Name validation
+              if (!name) {
+                errors.name = "Name is required";
+                valid = false;
+              }
+
+              // Email validation
+              if (!email) {
+                errors.email = "Email is required";
+                valid = false;
+              } else {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                  errors.email = "Invalid email address";
+                  valid = false;
+                }
+              }
+
+              // Phone validation
+              if (!phone) {
+                errors.phone = "Phone is required";
+                valid = false;
+              } else {
+                const phoneRegex = /^[0-9]{10}$/; // 10-digit numbers only
+                if (!phoneRegex.test(phone)) {
+                  errors.phone = "Invalid phone number (10 digits required)";
+                  valid = false;
+                }
+              }
+
+              // Message validation
+              if (!message) {
+                errors.message = "Message is required";
+                valid = false;
+              }
+
+              setFieldErrors(errors);
+
+              if (!valid) return;
+
+              // Send using EmailJS
+              emailjs
+                .sendForm(
+                  "service_gjeou7s",
+                  "service_gjeou7s",
+                  form,
+                  "OzvYmAxTP4XUBoAdq"
+                )
+                .then(
+                  () => {
+                    setSubmitted(true);
+                    setFieldErrors({});
+                    setSubmitError("");
+                    form.reset();
+                  },
+                  (err) => {
+                    console.error(err);
+                    setSubmitError("Error! Please try again.");
+                  }
+                );
+            }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col">
+                <input
+                  name="name"
+                  className="w-full px-4 py-3 rounded-md border border-border bg-background"
+                  placeholder="Your Name"
+                />
+                {fieldErrors.name && <span className="text-red-500 text-sm mt-1">{fieldErrors.name}</span>}
+              </div>
+
+              <div className="flex flex-col">
+                <input
+                  name="email"
+                  type="email"
+                  className="w-full px-4 py-3 rounded-md border border-border bg-background"
+                  placeholder="Email"
+                />
+                {fieldErrors.email && <span className="text-red-500 text-sm mt-1">{fieldErrors.email}</span>}
+              </div>
+
+              <div className="flex flex-col md:col-span-2">
+                <input
+                  name="phone"
+                  className="w-full px-4 py-3 rounded-md border border-border bg-background"
+                  placeholder="Phone"
+                />
+                {fieldErrors.phone && <span className="text-red-500 text-sm mt-1">{fieldErrors.phone}</span>}
+              </div>
+
+              <div className="flex flex-col md:col-span-2">
+                <textarea
+                  name="message"
+                  className="w-full px-4 py-3 rounded-md border border-border bg-background"
+                  rows={4}
+                  placeholder="How can we help?"
+                />
+                {fieldErrors.message && <span className="text-red-500 text-sm mt-1">{fieldErrors.message}</span>}
+              </div>
+            </div>
+
+            <div className="mt-6 text-right">
+              <Button type="submit" className="btn-corporate">Send Message</Button>
+            </div>
+
+            {submitted && <p className="mt-4 text-green-600 font-semibold">Submitted ✅</p>}
+            {submitError && <p className="mt-4 text-red-600 font-semibold">{submitError}</p>}
+          </form>
+          
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section (Consultation) */}
       <section id="consultation" className="section-padding bg-gradient-primary">

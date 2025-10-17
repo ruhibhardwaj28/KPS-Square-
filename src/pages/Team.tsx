@@ -342,7 +342,7 @@ const Team = () => {
                       service is what sets us apart in the industry."
                     </p>
                     <p className="text-primary font-semibold text-sm mt-2">
-                      - Pawan Sharma{" "}
+                      - Pawan Bhardwaj{" "}
                     </p>
                   </div>
                 </div>

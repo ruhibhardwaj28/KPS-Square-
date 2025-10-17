@@ -62,7 +62,7 @@ const About = () => {
             <div className="animate-slide-in">
               <h2 className="heading-section">Founder's Story</h2>
               <p className="text-corporate text-lg mb-6 leading-relaxed">
-                Founded in 2016 by Pawan Sharma, our firm was built on a clear vision — to deliver comprehensive, reliable, and ethical professional services that empower businesses to thrive in a dynamic and ever-changing regulatory environment.
+                Founded in 2016 by Pawan Bhardwaj , our firm was built on a clear vision — to deliver comprehensive, reliable, and ethical professional services that empower businesses to thrive in a dynamic and ever-changing regulatory environment.
               </p>
               <p className="text-corporate text-lg mb-6 leading-relaxed">
                 With over two decades of experience in taxation, audit, and business advisory, our founder saw the need for a more personalized and client-focused approach — one that extends beyond compliance to provide meaningful strategic guidance.
@@ -85,7 +85,7 @@ const About = () => {
                   <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-white font-bold text-2xl">KPS</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Pawan Sharma</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Pawan Bhardwaj</h3>
                   <p className="text-primary font-semibold mb-4">Founder & CEO</p>
                   <p className="text-corporate mb-6">
                     "Our mission is to be more than just service providers—we aim to be trusted 
@@ -93,11 +93,11 @@ const About = () => {
                   </p>
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-primary">20+</div>
+                      <div className="text-2xl font-bold text-primary">10+</div>
                       <div className="text-sm text-muted-foreground">Years Experience</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary">Funder & CEO</div>
+                      <div className="text-2xl font-bold text-primary">Founder & CEO</div>
                       <div className="text-sm text-muted-foreground">Businessman </div>
                     </div>
                   </div>

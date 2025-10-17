@@ -18,11 +18,11 @@ const Footer = () => {
                 <span className="font-bold text-lg text-white">KPS</span>
                 <span className="text-sm text-white/80">Square Consulting Services</span>
               </div>
-            </div>
+            </div>  
             <p className="text-white/80 text-sm leading-relaxed">
               Whether it’s managing finances, ensuring compliance, or driving growth, we deliver all the services you need under one trusted name.
             </p>
-            <p className="text-white/80 text-sm">Founder: Pawan Sharma</p>
+            <p className="text-white/80 text-sm">Founder: Pawan Bhardwaj</p>
           </div>
 
           {/* Quick Links */}
@@ -79,7 +79,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-white/80 flex-shrink-0" />
-                <span className="text-white/80 text-sm">+91 83685 82883</span>
+                <span className="text-white/80 text-sm">+91 83685 82883, +91 79063 53294</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-white/80 flex-shrink-0" />

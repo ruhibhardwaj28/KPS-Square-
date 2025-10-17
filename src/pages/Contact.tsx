@@ -55,19 +55,19 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone Numbers",
-      details: ["+91 83685 82883", "+91 98765 43211"],
-      link: "tel:+919876543210"
+      details: ["+91 83685 82883", "+91 79063 53294"],
+      link: "tel:+918368582883"
     },
     {
       icon: Mail,
       title: "Email Address",
       details: ["kpssquare@gmail.com", "pawankps001@gmail.com"],
-      link: "mailto:contact@professionalca.com"
+      link: "mailto: kpssquare@gmail.com"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon - Fri: 9:00 AM - 7:00 PM", "Sat: 9:00 AM - 5:00 PM", "Sun: Appointment Only"],
+      details: ["Mon - Fri: 10:00 AM - 6:00 PM", "Sat: 10:00 AM - 5:00 PM", "Sun: Appointment Only"],
       link: "#"
     }
   ];
@@ -211,9 +211,9 @@ const Contact = () => {
                             <SelectValue placeholder="Select preferred time" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="morning">Morning (9 AM - 12 PM)</SelectItem>
-                            <SelectItem value="afternoon">Afternoon (12 PM - 5 PM)</SelectItem>
-                            <SelectItem value="evening">Evening (5 PM - 7 PM)</SelectItem>
+                            <SelectItem value="morning">Morning (10:00 AM - 12:00 PM)</SelectItem>
+                            <SelectItem value="afternoon">Afternoon (12:00 PM - 3:00 PM)</SelectItem>
+                            <SelectItem value="evening">Evening (4:00 PM - 6:00 PM)</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
@@ -309,31 +309,44 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="section-padding">
-        <div className="container-width">
-          <div className="text-center mb-12">
-            <h2 className="heading-section">Find Our Office</h2>
-            <p className="text-corporate text-lg">
-              Located in the heart of Mumbai's business district for easy accessibility.
-            </p>
-          </div>
-          
-          <div className="bg-muted rounded-xl p-8 text-center">
-            <div className="w-full h-64 bg-gradient-secondary rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
-                <p className="text-lg font-semibold text-foreground mb-2">Interactive Map</p>
-                <p className="text-corporate">
-                 201011,HIG Flats, Chandra Nagar, Surya Nagar, Ghaziabad, Uttar Pradesh 201011, India
-                </p>
+      
+
+
+    <section className="section-padding">
+      <div className="container-width">
+        <div className="text-center mb-12">
+          <h2 className="heading-section">Find Our Office</h2>
+          <p className="text-corporate text-lg">
+            Located in the heart of Mumbai's business district for easy accessibility.
+          </p>
+        </div>
+
+        <div className="bg-muted rounded-xl p-8 text-center">
+          <div className="w-full h-64 bg-gradient-secondary rounded-lg flex items-center justify-center">
+            <div className="text-center">
+              <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
+              <p className="text-lg font-semibold text-foreground mb-2">Interactive Map</p>
+              <p className="text-corporate">
+                201011, HIG Flats, Chandra Nagar, Surya Nagar, Ghaziabad, Uttar Pradesh 201011, India
+              </p>
+
+              {/* ✅ Button that opens Google Maps for directions */}
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=201011,HIG+Flats,+Chandra+Nagar,+Surya+Nagar,+Ghaziabad,+Uttar+Pradesh+201011,+India"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button className="btn-secondary-corporate mt-4">
                   Get Directions
                 </Button>
-              </div>
+              </a>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  
+
 
       {/* FAQ Section */}
       <section className="section-padding bg-muted">
